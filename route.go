@@ -19,10 +19,10 @@ type Route struct {
 	routeConf
 }
 
-func (r *Route) Match(req string, match *RouteMatch) bool {
+func (r *Route) Match(req string, matcher *RouteMatch) bool {
 	for _, m := range r.matchers {
-		if matched := m.Match(req, match); matched {
-			//r.regexp.setMatch(req, match, r)
+		if matched := m.Match(req, matcher); matched {
+			matcher.Matcher = &m
 			return true
 		}
 	}

@@ -165,7 +165,8 @@ type routeRegexp struct {
 }
 
 func (r *routeRegexp) Match(path string, match *RouteMatch) bool{
-	return r.regexp.MatchString(path)
+	matched := r.regexp.MatchString(path)
+	return matched
 }
 
 // braceIndices returns the first level curly brace indices from a string.

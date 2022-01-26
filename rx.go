@@ -2,7 +2,6 @@ package rx
 
 import (
 	"errors"
-	"net/http"
 )
 
 var (
@@ -184,12 +183,7 @@ type WalkFunc func(route *Route, router *Router, ancestors []*Route) error
 // RouteMatch stores information about a matched route.
 type RouteMatch struct {
 	Route   *Route
-	Handler http.Handler
-	Vars    map[string]string
-
-	// MatchErr is set to appropriate matching error
-	// It is set to ErrMethodMismatch if there is a mismatch in
-	// the request method and route method
+	Matcher *matcher
 	MatchErr error
 }
 
