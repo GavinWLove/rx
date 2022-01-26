@@ -2,11 +2,11 @@ rx
 ====
 Inspired from mux,thanks mux!
 
-###usage
+## Install
 ```sh
 go get github.com/GavinWLove/rx
 ```
-###sample
+## Examples
 ```go
 	r := rx.NewRouter().NewRoute()
 	r = r.Path("/foo/{id}/aa")
